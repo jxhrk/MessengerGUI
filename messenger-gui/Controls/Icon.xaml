@@ -1,0 +1,56 @@
+﻿<UserControl x:Name="IconControl" x:Class="messenger_gui.Controls.Icon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:messenger_gui.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="ImageStyle" TargetType="{x:Type Image}">
+            <Setter Property="Source">
+                <Setter.Value>
+                    <DrawingImage x:Name="Img">
+                        <DrawingImage.Drawing>
+                            <!--<GeometryDrawing Brush="Red" Geometry="{StaticResource SettingsIconPath}"></GeometryDrawing>-->
+                            <GeometryDrawing Brush="{Binding Foreground, ElementName=IconControl}" Geometry="{Binding ImageData, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Icon}}}"></GeometryDrawing>
+                            <!--<GeometryDrawing Brush="{Binding Foreground, ElementName=IconControl}" Geometry="{Binding ImageData, ElementName=IconControl}"></GeometryDrawing>-->
+                        </DrawingImage.Drawing>
+                    </DrawingImage>
+                </Setter.Value>
+            </Setter>
+            
+
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <!--<TextBlock Text="123" Foreground="{Binding Foreground, ElementName=IconControl}"></TextBlock>-->
+        <!--<Rectangle Fill="Red">
+            <Rectangle.OpacityMask>
+                <ImageBrush>
+                    <ImageBrush.ImageSource>
+                        <DrawingImage x:Name="Img">
+                            <DrawingImage.Drawing>
+                                --><!--<GeometryDrawing Brush="Red" Geometry="{StaticResource SettingsIconPath}"></GeometryDrawing>--><!--
+                                <GeometryDrawing Brush="Black" Geometry="{Binding ImageData, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Icon}}}"></GeometryDrawing>
+                                --><!--<GeometryDrawing Brush="{Binding Foreground, ElementName=IconControl}" Geometry="{Binding ImageData, ElementName=IconControl}"></GeometryDrawing>--><!--
+                            </DrawingImage.Drawing>
+                        </DrawingImage>
+                    </ImageBrush.ImageSource>
+                </ImageBrush>
+            </Rectangle.OpacityMask>
+        </Rectangle>-->
+        <Image Style="{DynamicResource ImageStyle}">
+            <!--<Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        --><!--<GeometryDrawing Brush="Red" Geometry="{StaticResource SettingsIconPath}"></GeometryDrawing>--><!--
+                        <GeometryDrawing Brush="{Binding Foreground, ElementName=IconControl}" Geometry="{Binding ImageData, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Icon}}}"></GeometryDrawing>
+                        
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>-->
+        </Image>
+    </Grid>
+</UserControl>

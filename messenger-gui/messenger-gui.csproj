@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>messenger_gui</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Garet-Book.ttf" />
+    <None Remove="icons8-plus-100.png" />
+    <None Remove="icons8-right-arrow-48.png" />
+    <None Remove="icons8-настройки-100.png" />
+    <None Remove="icons8-синхронизировать-50.png" />
+    <None Remove="JetBrainsMono.ttf" />
+    <None Remove="Ubuntu-Bold.ttf" />
+    <None Remove="Ubuntu-Medium.ttf" />
+    <None Remove="Ubuntu-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\messenger-lib\messenger-lib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Garet-Book.ttf" />
+    <Resource Include="JetBrainsMono.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Ubuntu-Bold.ttf" />
+    <Resource Include="Ubuntu-Medium.ttf" />
+    <Resource Include="Ubuntu-Regular.ttf" />
+  </ItemGroup>
+
+</Project>
